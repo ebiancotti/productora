@@ -14,3 +14,4 @@ INSERT INTO artista(nombre, apellido, seudonimo, nacionalidad, fecha_nacimiento)
 INSERT INTO artista(nombre, apellido, seudonimo, nacionalidad, fecha_nacimiento) VALUES ('Enrique', 'Morales', 'Ricky Martin', 'Puerto Rico', '1971-12-24');
 
 SELECT * FROM artista;
+SELECT seudonimo, id_artista FROM artista;
