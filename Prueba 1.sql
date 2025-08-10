@@ -30,27 +30,43 @@ SELECT * FROM artista;
 SELECT seudonimo, id_artista, fecha_nacimiento FROM artista;
 */
 
+-- Creacion de tabla "genero"
+
+CREATE TABLE IF NOT EXISTS genero(
+id_genero INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+nombre VARCHAR(100) NOT NULL);
+
+-- Insercion de datos en la tabla genero
+
+INSERT INTO genero(nombre) VALUES ('genero1'), ('genero2'), ('genero3');
+
+-- Verificacion de datos tabla "genero"
+
+SELECT * FROM genero;
+
 -- Creacion de tabla "album"
 
-/*
+
 CREATE TABLE IF NOT EXISTS album(
 id_album INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 id_artista INT,
 FOREIGN KEY (id_artista) REFERENCES artista(id_artista),
 nombre_album VARCHAR(100) NOT NULL,
 fecha_lanzamiento DATE);
-*/
 
--- Insercion de datos en la tabla album
+ALTER TABLE album ADD COLUMN (
+genero_principal INT,
+FOREIGN KEY (genero_principal) REFERENCES genero(id_genero));
+
 
 /*
-INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento) VALUES ('1', 'Disco1', '1991-02-13');
-INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento) VALUES ('2', 'Disco2', '1995-07-18');
+INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, genero_principal) VALUES ('1', 'Disco1', '1991-02-13', 1);
+INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, genero_principal) VALUES ('2', 'Disco2', '1995-07-18', 2);
 */
 
 -- Verificacion de datos tabla "album"
 
--- SELECT * FROM album;
+SELECT * FROM album;
 
 -- Creacion de tabla "cancion"
 
@@ -65,11 +81,56 @@ FOREIGN KEY (id_album) REFERENCES album(id_album));
 
 -- Insercion de datos en la tabla album
 
--- INSERT INTO cancion (titulo, duracion_segundos, id_album) VALUES ('Cancion1A', 183, 1), ('Cancion2A', 190, 1), ('Cancion1B', 160, 2), ('Cancion2B', 180, 2);
+-- INSERT INTO cancion (titulo, duracion_segundos, id_album) VALUES ('Cancion1A', 183, 1), ('Cancion2A', 190, 1), ('Cancion3A', 210, 1), ('Cancion1B', 160, 2), ('Cancion2B', 180, 2);
 
 -- Verificacion de datos tabla cancion
 
-SELECT * FROM cancion;
+-- SELECT * FROM cancion;
+
+
+-- Posible vista. Nombre + disco + fechadisco
+
+SELECT
+ar.seudonimo,
+al.nombre_album,
+al.fecha_lanzamiento
+FROM artista ar
+JOIN album al
+ON ar.id_artista = al.id_artista;
+
+-- Posible vista disco + genero + cantidad de canciones en el disco + genero del disco
+
+SELECT
+al.nombre_album,
+al.genero_principal,
+COUNT(ca.id_cancion) AS cantidad_de_canciones,
+g.nombre AS genero_principal
+FROM album al
+JOIN cancion ca
+ON al.id_album = ca.id_album
+JOIN genero g
+ON al.genero_principal = g.id_genero
+GROUP BY
+al.nombre_album,
+al.genero_principal;
+
+-- Posible vista cantidad de canciones que duran mas de 3 minutos + artista + album
+
+SELECT
+ca.titulo,
+ar.seudonimo,
+al.nombre_album
+FROM cancion ca
+JOIN album al ON al.id_album = ca.id_album
+JOIN artista ar ON ar.id_artista = al.id_artista
+where duracion_segundos > 180;
+
+
+
+
+
+
+
 
 
 
