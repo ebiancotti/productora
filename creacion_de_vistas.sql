@@ -26,7 +26,7 @@ al.genero_principal;
 
 -- Vista cantidad de canciones que duran mas de 3 minutos + artista + album
 
-CREATE VIEW canciones_mayores_3_minutos AS
+CREATE VIEW canciones_mayores_5_minutos AS
 SELECT
 ca.titulo,
 ar.seudonimo,
@@ -34,6 +34,6 @@ al.nombre_album
 FROM cancion ca
 JOIN album al ON al.id_album = ca.id_album
 JOIN artista ar ON ar.id_artista = al.id_artista
-where duracion_segundos > 180;
+where duracion_segundos > 300;
 
 

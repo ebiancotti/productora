@@ -83,9 +83,9 @@ genero_cant_canciones_del_disco:
 Muestra la cantidad de canciones de cada disco, agrupados por género
 
 
-canciones_mayores_3_minutos:
+canciones_mayores_5_minutos:
 
-Muestra nombre de la canción, artista y album de aquellas canciones cuya duración de mayor a 3 minutos
+Muestra nombre de la canción, artista y album de aquellas canciones cuya duración de mayor a 5 minutos
 
 
 
