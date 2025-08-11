@@ -102,6 +102,7 @@ Muestra nombre de la canción, artista y album de aquellas canciones cuya duraci
 - <a href="./creacion_base_tablas.sql"> Creacion de la BDD </a><br>
 - <a href="./insercion_de_datos.sql"> Inserción de Datos</a><br>
 - <a href="./creacion_de_vistas.sql"> Creacion de las Vistas</a><br>
+- <a href="./Diagrama ER.pdf"> Diagrama Entidad - Relación</a><br>
 
   <br>
 
