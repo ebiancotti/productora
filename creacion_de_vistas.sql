@@ -19,10 +19,10 @@ FROM album al
 JOIN cancion ca
 ON al.id_album = ca.id_album
 JOIN genero g
-ON al.genero_principal = g.id_genero
+ON al.id_genero = g.id_genero
 GROUP BY
 al.nombre_album,
-al.genero_principal;
+al.id_genero;
 
 -- Vista cantidad de canciones que duran mas de 3 minutos + artista + album
 

@@ -54,7 +54,7 @@ Tabla "album" contiente los datos del mismo e identificadores que lo conectan co
 
 id_album se utilizó como clave primaria, de forma de identificador único.
 id_artista se utilizó como clave secundaria que lo vincula con el artista principal de dicho album
-genero_principal se utilizó como clave secundaria que lo vincula con el género musical predominante en dicho album
+id_genero se utilizó como clave secundaria que lo vincula con el género musical predominante en dicho album
 
 Tabla "genero": 
 

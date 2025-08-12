@@ -13,18 +13,18 @@ INSERT INTO genero(nombre) VALUES ('Balada'), ('Pop Romántico'), ('Pop latino')
 
 -- Insercion de datos en la tabla album
 
-INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, genero_principal) VALUES ('1', 'Provócame', '1992-08-14', 4);
-INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, genero_principal) VALUES ('1', 'Volver a nacer', '1996-09-17', 2);
-INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, genero_principal) VALUES ('1', 'Atado a tu amor', '1998-09-29', 3);
+INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES ('1', 'Provócame', '1992-08-14', 4);
+INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES ('1', 'Volver a nacer', '1996-09-17', 2);
+INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES ('1', 'Atado a tu amor', '1998-09-29', 3);
 
-INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, genero_principal) VALUES ('2', 'Me amarás', '1993-05-25', 3);
-INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, genero_principal) VALUES ('2', 'A medio vivir', '1995-09-12', 3);
+INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES ('2', 'Me amarás', '1993-05-25', 3);
+INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES ('2', 'A medio vivir', '1995-09-12', 3);
 
-INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, genero_principal) VALUES ('3', 'Un toque de misterio', '1989-12-12', 2);
-INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, genero_principal) VALUES ('3', 'Una mañana y un camino', '1994-06-28', 2);
+INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES ('3', 'Un toque de misterio', '1989-12-12', 2);
+INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES ('3', 'Una mañana y un camino', '1994-06-28', 2);
 
-INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, genero_principal) VALUES ('4', 'Historias', '1994-04-19', 1);
-INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, genero_principal) VALUES ('4', 'Si el norte fuera el sur', '1996-08-20', 1);
+INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES ('4', 'Historias', '1994-04-19', 1);
+INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES ('4', 'Si el norte fuera el sur', '1996-08-20', 1);
 
 -- Insercion de datos en la tabla album
 

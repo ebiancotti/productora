@@ -30,8 +30,8 @@ id_artista INT,
 FOREIGN KEY (id_artista) REFERENCES artista(id_artista),
 nombre_album VARCHAR(100) NOT NULL,
 fecha_lanzamiento DATE,
-genero_principal INT,
-FOREIGN KEY (genero_principal) REFERENCES genero(id_genero));
+id_genero INT,
+FOREIGN KEY (id_genero) REFERENCES genero(id_genero));
 
 
 -- Creacion de tabla "cancion"
