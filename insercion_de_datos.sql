@@ -5,12 +5,13 @@ INSERT INTO artista(nombre, apellido, seudonimo, nacionalidad, fecha_nacimiento)
 INSERT INTO artista(nombre, apellido, seudonimo, nacionalidad, fecha_nacimiento) VALUES ('Hector', 'Montaner', 'Ricardo Montaner', 'Argentina', '1957-09-08');
 INSERT INTO artista(nombre, apellido, seudonimo, nacionalidad, fecha_nacimiento) VALUES ('Edgar', 'Arjona', 'Ricardo Arjona', 'Guatemala', '1964-01-19');
 INSERT INTO artista(nombre, apellido, seudonimo, nacionalidad, fecha_nacimiento) VALUES ('Juan Facundo', 'Almenara Ordónez Del Corazón De Jesus', 'Luck Ra', 'Argentina', '1999-02-20');
+INSERT INTO artista(nombre, apellido, seudonimo, nacionalidad, fecha_nacimiento) VALUES ('Juan Luis', 'Londoño Arias', 'Maluma', 'Colombia', '1994-01-28');
 
 
 
 -- Insercion de datos en la tabla genero
 
-INSERT INTO genero(nombre) VALUES ('Balada'), ('Pop Romántico'), ('Pop latino'), ('Pop'), ('Cuarteto');
+INSERT INTO genero(nombre) VALUES ('Balada'), ('Pop Romántico'), ('Pop latino'), ('Pop'), ('Cuarteto'), ('Reguetón');
 
 
 -- Insercion de datos en la tabla album
@@ -31,6 +32,8 @@ INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES
 INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES ('5', 'Que nos falte todo', '2024-02-01', 5);
 INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES ('5', 'Que sed', '2025-04-10', 5);
 
+INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES ('6', '11-11', '2019-05-17', 6);
+INSERT INTO album(id_artista, nombre_album, fecha_lanzamiento, id_genero) VALUES ('6', 'Papi Juancho', '2020-08-21', 6);
 
 -- Insercion de datos en la tabla album
 
@@ -66,9 +69,15 @@ INSERT INTO cancion (titulo, duracion_segundos, id_album) VALUES
 ('La morocha', 134, 10),
 
 ('Doctor', 144, 11),
-('Un siglo sin ti', 154, 11);
+('Un siglo sin ti', 154, 11),
+
+('11 PM', 258, 12),
+('No se me quita', 219, 12),
+
+('Hawái', 199, 13),
+('ADMV', 193, 13);
 
 -- Insercion de datos en la tabla colaboracion
 
 INSERT INTO colaboracion (id_cancion, id_artista, id_artista_invitado) VALUES
-(22, 5, 1); 
+(22, 5, 1), (24, 6, 2) ; 
