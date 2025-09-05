@@ -37,3 +37,20 @@ JOIN artista ar ON ar.id_artista = al.id_artista
 where duracion_segundos > 300;
 
 
+-- Vista de Artista principal con artista invitado, canción y álbum en cuestión
+
+CREATE VIEW Artistas_Colaboracion AS
+SELECT 
+	a.seudonimo AS Artista_Principal,
+	i.seudonimo AS Artista_invitado,
+	c.titulo AS Cancion,
+	al.nombre_album AS Album
+FROM colaboracion col
+JOIN cancion c
+	ON col.id_cancion = c.id_cancion
+JOIN artista a
+	ON col.id_artista = a.id_artista
+JOIN artista i
+	ON col.id_artista_invitado = i.id_artista
+JOIN album al
+	ON c.id_album = al.id_album;

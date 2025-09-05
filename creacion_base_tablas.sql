@@ -43,3 +43,18 @@ duracion_segundos INT,
 id_album INT,
 FOREIGN KEY (id_album) REFERENCES album(id_album));
 
+
+
+-- Creacion de tabla "colaboración"
+
+CREATE TABLE IF NOT EXISTS colaboracion(
+id_colaboracion INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+id_cancion INT,
+id_artista INT,
+id_artista_invitado INT,
+FOREIGN KEY (id_cancion) REFERENCES cancion(id_cancion),
+FOREIGN KEY (id_artista) REFERENCES artista(id_artista),
+FOREIGN KEY (id_artista_invitado) REFERENCES artista(id_artista));
+
+
+
