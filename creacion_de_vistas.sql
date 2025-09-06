@@ -41,7 +41,7 @@ CREATE VIEW canciones_mayores_5_minutos AS
 
 -- Vista de Artista principal con artista invitado, canción y álbum en cuestión
 
-CREATE VIEW Artistas_Colaboracion AS
+CREATE VIEW artistas_colaboracion AS
 	SELECT 
 		a.seudonimo AS Artista_Principal,
 		i.seudonimo AS Artista_invitado,
@@ -57,5 +57,24 @@ CREATE VIEW Artistas_Colaboracion AS
 	JOIN album al
 		ON c.id_album = al.id_album;
 
--- Vista de canciones totales del artista (incluyendo colaboraciones)
+-- vista_albums_por_genero (mostrar el género y la cant de albumes de cada genero)
+
+-- vista_canciones_por_artista (lista a los artistas y la cantidad de canciones de cada uno)
+
+-- Vista de canciones totales del artista (incluyendo colaboraciones) Esto es mas una idea para una funcion o SP
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
