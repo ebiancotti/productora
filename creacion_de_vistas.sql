@@ -57,14 +57,32 @@ CREATE VIEW artistas_colaboracion AS
 	JOIN album al
 		ON c.id_album = al.id_album;
 
+
 -- vista_albums_por_genero (mostrar el género y la cant de albumes de cada genero)
+
+CREATE VIEW cant_albumes_por_genero AS
+	SELECT
+		g.nombre AS Genero,
+		COUNT(al.id_album) AS Cantidad_de_albumes
+	FROM genero g
+    JOIN album al
+		ON al.id_genero = g.id_genero
+	GROUP BY genero;
+        
 
 -- vista_canciones_por_artista (lista a los artistas y la cantidad de canciones de cada uno)
 
--- Vista de canciones totales del artista (incluyendo colaboraciones) Esto es mas una idea para una funcion o SP
+CREATE VIEW cant_canciones_por_artista AS
+	SELECT
+		a.seudonimo AS Artista,
+        COUNT(c.id_cancion) AS Cantidad_de_canciones
+	FROM artista a
+    JOIN album al
+		ON al.id_artista = a.id_artista
+    JOIN cancion c
+		ON al.id_album = c.id_album
+	GROUP BY artista
 
-
-    
     
     
     

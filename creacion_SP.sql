@@ -57,3 +57,27 @@ END
 $$
 
 DELIMITER ;
+
+
+-- ----------------------------------------------------------------
+
+-- Devuelve el listado de canciones del artista que se le indique (por ID)
+
+DELIMITER $$
+CREATE PROCEDURE obtener_canciones_por_artista(
+    IN p_id_artista INT
+)
+BEGIN
+    SELECT 
+        a.seudonimo AS artista,        
+        c.titulo AS cancion,
+        al.nombre_album AS album
+        
+    FROM artista AS a
+    INNER JOIN album AS al ON a.id_artista = al.id_artista
+    INNER JOIN cancion AS c ON al.id_album = c.id_album
+    WHERE a.id_artista = p_id_artista
+    ORDER BY al.nombre_album, c.titulo ASC;
+END
+$$
+DELIMITER ;
