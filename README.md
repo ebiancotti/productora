@@ -67,6 +67,33 @@ Tabla "cancion":
 id_canción se utilizó como clave primaria, de forma de identificador único.
 id_album se utilizó como clave secundaria que lo vincula con el album que contiene dicha canción.
 
+Tabla "colaboracion":
+
+id_colaboracion se utilizó como clave primaria, de forma de identificador único.
+id_cancion se utilizó como clave secundaria que lo vincula con la canción a la que hace referencia dicha colaboración
+id_artista se utilizó como clave secundaria que lo vincula con el artista principal de dicha canción
+id_artista_invitado se utilizó como clave secundaria que lo vincula con el artista invitado que participa en la canción
+
+
+
+Tablas de control:
+
+
+Tabla "auditoria_artista": 
+
+id_auditoria_artista se utilizó como clave primaria, de forma de identificador único.
+El resto de los campos toman los datos que se quieren auditar, antes de la inserción y luego de la eliminación de un artista.
+Se sumaron campos extra de control como el usuario que realizó la inserción/eliminación, fecha y hora del movimiento y tipo de movimiento.
+
+
+Tabla "auditoria_album": 
+
+id_auditoria_album se utilizó como clave primaria, de forma de identificador único.
+El resto de los campos toman los datos que se quieren auditar al modificarse un album.
+En los campos con el prefijo "OLD" se guardan los registros antes de la modificación y en los campos con el prefijo "NEW" los registros actualizados.
+Se sumaron campos extra de control como el usuario que realizó la modificación, fecha y hora del movimiento y notas.
+
+
 ```
 
 ### Vistas:
@@ -80,17 +107,99 @@ Muestra los álbumes con sus respectivas fechas de lanzamiento, de cada uno de l
 
 genero_cant_canciones_del_disco:
 
-Muestra la cantidad de canciones de cada disco, agrupados por género
+Muestra la cantidad de canciones de cada disco, agrupados por género.
 
 
 canciones_mayores_5_minutos:
 
-Muestra nombre de la canción, artista y album de aquellas canciones cuya duración de mayor a 5 minutos
+Muestra nombre de la canción, artista y album de aquellas canciones cuya duración de mayor a 5 minutos.
 
+
+artistas_colaboracion:
+
+Muestra el nombre (campo seudónimo) del artista principal que canta la canción, el artista invitado, la cancion que cantan y el album al que pertenece.
+
+
+cant_albumes_por_genero:
+
+Hace un listado de los géneros y la cantidad de canciones de cada uno.
+
+
+cant_canciones_por_artista:
+
+Hace un listado del total de canciones de cada artista.
+
+
+```
+
+
+### Funciones:
+
+```sh
+
+calcular_duracion_total_album:
+
+Suma la duración de todas las canciones de un album y devuelve el resultado en formato TIME (MM:SS).
+
+
+es_artista_colaborador:
+
+Indica si el artista colabora como invitado en una canción.
 
 
 
 ```
+
+
+### Stored Procedures:
+
+```sh
+
+registrar_colaboracion:
+
+Sirve para ingresar una nueva colaboración indicándole el id de la canción, el id del artista principal y el id del artista invitado.
+
+
+obtener_canciones_por_artista:
+
+Muestra las canciones y el album al que pertenece cada una del artista que se le indica.
+
+
+
+eliminar_artista_y_su_obra:
+
+Elimina un artista, con todos sus albumes, canciones y colaboraciones. (Útil en este caso para probar el trigger de eliminación de artistas)
+
+
+
+```
+
+
+### Triggers:
+
+```sh
+
+auditoria_insercion_artista:
+
+Registra las nuevas inserciones de artistas.
+
+
+
+auditoria_eliminacion_artista:
+
+Registra las eliminaciones de artistas.
+
+
+
+auditoria_modificacion_album:
+
+Registra las modificaciones de albumes.
+
+
+
+```
+
+
 
 
 <br>
@@ -102,6 +211,9 @@ Muestra nombre de la canción, artista y album de aquellas canciones cuya duraci
 - <a href="./creacion_base_tablas.sql"> Creacion de la BDD </a><br>
 - <a href="./insercion_de_datos.sql"> Inserción de Datos</a><br>
 - <a href="./creacion_de_vistas.sql"> Creacion de las Vistas</a><br>
+- <a href="./creacion_SP.sql"> Creacion de los Stored Procedures</a><br>
+- <a href="./creacion_funciones.sql"> Creacion de las Funciones</a><br>
+- <a href="./creacion_triggers.sql"> Creacion de los Triggers</a><br>
 - <a href="./Diagrama ER.pdf"> Diagrama Entidad - Relación</a><br>
 
   <br>

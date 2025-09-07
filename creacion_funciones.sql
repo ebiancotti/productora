@@ -1,5 +1,3 @@
-
-
 -- Creacion de Funcion que calcula la duración de un álbum
 
 DELIMITER $$
@@ -18,10 +16,9 @@ BEGIN
     RETURN duracion_total;
 END
 $$
-
 DELIMITER ;
 
--- ----------------------------------------------------------------
+
 
 -- Devuelve si un artista realiza por lo menos una colaboración en alguna canción.
 
@@ -42,21 +39,7 @@ BEGIN
     RETURN es_colaborador;
 END
 $$
-
 DELIMITER ;
-
-
--- Devuelve todas las canciones del artista (incluyendo colaboraciones)
-
-
-SELECT titulo
-FROM cancion c
-
-JOIN album al
-	ON c.id_cancion = al.id_album
-
-
-WHERE al.id_artista = 4;
 
 
 

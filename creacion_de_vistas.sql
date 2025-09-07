@@ -58,7 +58,7 @@ CREATE VIEW artistas_colaboracion AS
 		ON c.id_album = al.id_album;
 
 
--- vista_albums_por_genero (mostrar el género y la cant de albumes de cada genero)
+-- Muestra el género y la cant de albumes de cada genero)
 
 CREATE VIEW cant_albumes_por_genero AS
 	SELECT
@@ -70,7 +70,7 @@ CREATE VIEW cant_albumes_por_genero AS
 	GROUP BY genero;
         
 
--- vista_canciones_por_artista (lista a los artistas y la cantidad de canciones de cada uno)
+-- Muestra una lista con los artistas y la cantidad de canciones de cada uno
 
 CREATE VIEW cant_canciones_por_artista AS
 	SELECT
@@ -82,17 +82,4 @@ CREATE VIEW cant_canciones_por_artista AS
     JOIN cancion c
 		ON al.id_album = c.id_album
 	GROUP BY artista
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 

@@ -63,6 +63,7 @@ CREATE TABLE IF NOT EXISTS colaboracion(
 CREATE TABLE IF NOT EXISTS auditoria_artista(
 	id_auditoria_artista INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     id_artista INT NOT NULL,
+    FOREIGN KEY (id_artista) REFERENCES artista(id_artista),
 	seudonimo VARCHAR (80),
     usuario VARCHAR (250),
     fecha_hora DATETIME,

@@ -16,9 +16,6 @@ INSERT INTO auditoria_artista VALUES
 (DEFAULT, old.id_artista, old.seudonimo, user(), NOW(), 'se eliminó un artista');
 
 
-SELECT * FROM auditoria_artista;
-SELECT * FROM auditoria_album;
-
 -- Se crea el trigger "auditoria_modificacion_album" que se dispara cada vez que se modifica un album
 
 CREATE TRIGGER auditoria_modificacion_album

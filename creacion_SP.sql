@@ -1,5 +1,3 @@
-
-
 -- Creación de Stored Procedure para registrar colaboraciones
 
 DELIMITER $$
@@ -24,10 +22,9 @@ BEGIN
     VALUES (id_cancion, id_artista_principal, id_artista_invitado);
 END
 $$
-
 DELIMITER ;
 
--- ----------------------------------------------------------------
+
 
 -- elimina por completo todo lo relacionado con el artista
 
@@ -55,11 +52,9 @@ BEGIN
 
 END
 $$
-
 DELIMITER ;
 
 
--- ----------------------------------------------------------------
 
 -- Devuelve el listado de canciones del artista que se le indique (por ID)
 
