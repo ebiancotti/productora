@@ -97,6 +97,7 @@ CALL obtener_canciones_por_artista((SELECT id_artista FROM artista WHERE seudoni
 SELECT * FROM artista WHERE seudonimo = 'Ricardo Montaner';
 
 -- Verificamos que tiene álbumes:
+
 SELECT ar.seudonimo, al.nombre_album
 	FROM artista ar
 	JOIN album al
@@ -105,13 +106,12 @@ WHERE ar.seudonimo = 'Ricardo Montaner';
 
 -- Verificamos que tiene canciones:
 
-SELECT 
-        a.seudonimo,        
-        c.titulo
-        
+SELECT a.seudonimo, c.titulo        
     FROM artista AS a
-    INNER JOIN album AS al ON a.id_artista = al.id_artista
-    INNER JOIN cancion AS c ON al.id_album = c.id_album
+    INNER JOIN album AS al 
+		ON a.id_artista = al.id_artista
+    INNER JOIN cancion AS c 
+		ON al.id_album = c.id_album
     WHERE a.seudonimo = 'Ricardo Montaner'
     ORDER BY c.titulo ASC;
 
