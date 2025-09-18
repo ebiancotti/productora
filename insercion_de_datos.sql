@@ -1,3 +1,5 @@
+USE productora;
+
 -- Insercion de datos en la tabla artista
 
 INSERT INTO artista(nombre, apellido, seudonimo, nacionalidad, fecha_nacimiento) VALUES ('Elmer', 'Figueroa', 'Chayanne', 'Puerto Rico', '1968-06-28');

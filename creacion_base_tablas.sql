@@ -1,7 +1,7 @@
 -- Creacion de BDD
 
- CREATE DATABASE IF NOT EXISTS productora;
- USE productora;
+CREATE DATABASE IF NOT EXISTS productora;
+USE productora;
 
 
 -- Creacion de tabla "artista"
@@ -63,7 +63,6 @@ CREATE TABLE IF NOT EXISTS colaboracion(
 CREATE TABLE IF NOT EXISTS auditoria_artista(
 	id_auditoria_artista INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     id_artista INT NOT NULL,
-    FOREIGN KEY (id_artista) REFERENCES artista(id_artista),
 	seudonimo VARCHAR (80),
     usuario VARCHAR (250),
     fecha_hora DATETIME,
@@ -76,13 +75,10 @@ CREATE TABLE IF NOT EXISTS auditoria_album(
 	id_auditoria_album INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     id_album INT NOT NULL,
 	id_artista INT,
-    FOREIGN KEY (id_artista) REFERENCES artista(id_artista),
 	OLD_nombre_album VARCHAR(100) NOT NULL,
 	OLD_id_genero INT,
-    FOREIGN KEY (OLD_id_genero) REFERENCES genero(id_genero),
     NEW_nombre_album VARCHAR(100) NOT NULL,
     NEW_id_genero INT,
-    FOREIGN KEY (NEW_id_genero) REFERENCES genero(id_genero),
 	usuario VARCHAR (250),
     fecha_hora DATETIME,
     notas_mov VARCHAR(250));

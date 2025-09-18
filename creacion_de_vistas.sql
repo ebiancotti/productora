@@ -1,3 +1,5 @@
+USE productora;
+
 -- Vista Nombre + disco + fechadisco
 CREATE VIEW discos_por_artistas AS
 	SELECT

@@ -1,3 +1,5 @@
+USE productora;
+
 -- Se crea el trigger "auditoria_insercion_artista" que se dispara cada vez que se inserta un nuevo artista a la base
 
 CREATE TRIGGER auditoria_insercion_artista

@@ -1,3 +1,5 @@
+USE productora;
+
 -- Creación de Stored Procedure para registrar colaboraciones
 
 DELIMITER $$

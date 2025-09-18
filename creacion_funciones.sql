@@ -1,3 +1,5 @@
+USE productora;
+
 -- Creacion de Funcion que calcula la duración de un álbum
 
 DELIMITER $$
