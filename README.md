@@ -215,6 +215,8 @@ Registra las modificaciones de albumes.
 - <a href="./creacion_funciones.sql"> Creacion de las Funciones</a><br>
 - <a href="./creacion_triggers.sql"> Creacion de los Triggers</a><br>
 - <a href="./Diagrama ER.pdf"> Diagrama Entidad - Relación</a><br>
+- <a href="./ejemplos.sql"> ejemplos de uso de Vistas, Funciones, SP y Triggers</a><br>
+
 
   <br>
 
