@@ -36,7 +36,11 @@ CREATE PROCEDURE eliminar_artista_y_su_obra(
     IN p_artista_id INT
 )
 BEGIN
-
+	
+    START TRANSACTION;
+-- Temporalmente desactivo la restricción de clave foránea
+	SET FOREIGN_KEY_CHECKS = 0;
+    
    -- Elimina las colaboraciones del artista
     DELETE FROM colaboracion WHERE id_artista = p_artista_id;
     DELETE FROM colaboracion WHERE id_artista_invitado = p_artista_id;
@@ -51,7 +55,10 @@ BEGIN
 
     -- Elimina al artista
     DELETE FROM artista WHERE id_artista = p_artista_id;
-
+	
+    -- Reactivar la restricción de clave foránea
+	SET FOREIGN_KEY_CHECKS = 1;
+    COMMIT;
 END
 $$
 DELIMITER ;

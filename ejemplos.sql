@@ -136,10 +136,10 @@ WHERE ar.seudonimo = 'Ricardo Montaner';
 
 SELECT 
         a.seudonimo,        
-        c.titulo
-        
+        c.titulo        
     FROM artista AS a
     INNER JOIN album AS al ON a.id_artista = al.id_artista
     INNER JOIN cancion AS c ON al.id_album = c.id_album
     WHERE a.seudonimo = 'Ricardo Montaner'
     ORDER BY c.titulo ASC;
+    
